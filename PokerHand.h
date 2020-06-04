@@ -68,10 +68,10 @@ namespace poker {
 		Comparison compareWith(const PokerHand& opponent);
 		int getHighestCardOfCombinationValue() const;
 
-		inline int getHighestCard() const 					{ return m_cards.rbegin()->getRank();}
-		inline int getHighestCardValue() const				{ return m_cards.rbegin()->getValueOfRank();}
+		inline int getHighestCard() const 			{ return m_cards.rbegin()->getRank();}
+		inline int getHighestCardValue() const			{ return m_cards.rbegin()->getValueOfRank();}
 		inline std::vector<PokerCard> const getHand() const	{ return m_cards;}
-		inline bool haveCombinations() const 				{ return m_haveCombination;}
+		inline bool haveCombinations() const 			{ return m_haveCombination;}
 
 	private:
 		std::string hand;

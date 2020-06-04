@@ -108,11 +108,11 @@ int poker::PokerHand::getHighestCardOfCombinationValue() const
 poker::PokerHand::Combination poker::PokerHand::getHighestCombination() const
 {
 	// check for straight flush
-	if(m_straightFlush) { return poker::PokerHand::Combination::StraightFlush; }
+	if(m_straightFlush) 	{ return poker::PokerHand::Combination::StraightFlush; }
 	// check for four of kind
-	if(m_fourOfKind)    { return poker::PokerHand::Combination::FourOfKind;	}
+	if(m_fourOfKind)   	{ return poker::PokerHand::Combination::FourOfKind;	}
 	// check for full house
-	if ( m_fullHouse)   { return poker::PokerHand::Combination::FullHouse; }
+	if ( m_fullHouse)   	{ return poker::PokerHand::Combination::FullHouse; }
 	// check for flush
 	if(m_flush) 		{ return poker::PokerHand::Combination::Flush; }
 	// check for straight
@@ -136,9 +136,9 @@ void poker::PokerHand::parseHand()
 	// sort the vector in order to have the highest card in the back
 	// and to be easier for checking for sequence
 	std::sort(m_cards.begin(), m_cards.end(),[&](auto& first, auto& second)
-										{
-											return first.getValueOfRank() < second.getValueOfRank();
-										});
+						 {
+							return first.getValueOfRank() < second.getValueOfRank();
+						 });
 
 	initCombinations();
 }
@@ -198,8 +198,8 @@ void poker::PokerHand::initCombinations()
 
 			// check if we have one pair, two pair or full house
 			if ( count == 2) { if (!m_onePair) { if(!m_threeOfKind) {m_onePair = true;} 
-												 else { m_threeOfKind = false; m_fullHouse = true;} }
-							   else { m_onePair = false; m_twoPair = true; } }
+							     else { m_threeOfKind = false; m_fullHouse = true;} }
+					   else { m_onePair = false; m_twoPair = true; } }
 			
 			//check if we have three of kind or full house
 			if ( count == 3) { if (!m_onePair) {m_threeOfKind = true;} 
