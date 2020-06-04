@@ -33,3 +33,5 @@ The ranking of the hands should follow the [Texas Hold'em rules](https://en.wiki
 
 You can run with the following command:
 g++ -std=c++17 -o poker PokerHand.cpp PokerHand_UnitTest.cpp
+
+## 2. Do NOT use this code for anything else but evaluation for my application. This is an intelectual property.
